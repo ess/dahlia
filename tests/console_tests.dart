@@ -1,7 +1,7 @@
-#library('runs all tests on the console');
+// runs all tests on the console
 
-#import('../src/dahlia.dart');
-#import('test_suites.dart');
+import '../src/dahlia.dart';
+import 'test_suites.dart';
 
 main() {
   testSuites();

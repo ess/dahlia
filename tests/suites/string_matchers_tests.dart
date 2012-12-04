@@ -1,3 +1,5 @@
+part of DahliaTestSuites;
+
 stringMatchersTests() {
   describe('startWith matcher', () {
     it('should succeed if the actual string starts with the expected string', () => expect('hallo').to(startWith('ha')));

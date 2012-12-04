@@ -1,3 +1,5 @@
+part of DahliaTestSuites;
+
 blockTests() {
   describe('block', () {
     int afterAllCounter = 0;
