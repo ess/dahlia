@@ -1,6 +1,6 @@
 library DahliaTestSuites;
 
-import '../src/dahlia.dart';
+import '../lib/dahlia.dart';
 
 part 'suites/general_matcher_tests.dart';
 part 'suites/string_matchers_tests.dart';
