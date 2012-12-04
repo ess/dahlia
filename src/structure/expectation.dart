@@ -1,3 +1,5 @@
+part of Dahlia;
+
 Expectation expect(var actual) => new Expectation(actual);
 
 class Expectation {

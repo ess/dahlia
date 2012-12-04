@@ -1,3 +1,5 @@
+part of Dahlia;
+
 StartWithMatcher startWith(var expected) => new StartWithMatcher(expected);
 ContainSubstringMatcher containSubstring(var expected) => new ContainSubstringMatcher(expected);
 
