@@ -1,3 +1,5 @@
+part of DahliaTestSuites;
+
 class RunnerTestReporter implements Reporter {
   StringBuffer runLog;
   
@@ -42,8 +44,8 @@ class RunnerTestReporter implements Reporter {
 
 class RunnerTestBlockSwitcher implements BlockSwitcher {
   Block _rootBlock;
-  void switchTo(Block block) {}
-  Block get rootBlock()            => _rootBlock;
+  Block switchTo(Block block) {}
+  Block get rootBlock              => _rootBlock;
         set rootBlock(Block block) => _rootBlock = block;
 }
 

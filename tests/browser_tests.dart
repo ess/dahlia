@@ -1,7 +1,7 @@
-#import('dart:html');
-#import('../src/dahlia.dart');
+import 'dart:html';
+import '../src/dahlia.dart';
 
-#import('test_suites.dart');
+import 'test_suites.dart';
 
 main() {
   testSuites();

@@ -1,3 +1,5 @@
+part of Dahlia;
+
 describe(String description, Function function) => _addBlock(new DescribeBlock(description, function));
 it(String description, Function function) => _addBlock(new ItBlock(description, function));
 beforeEach(Function function) => _currentBlock.beforeEach = function;
@@ -5,7 +7,7 @@ beforeAll(Function function) => _currentBlock.beforeAll = function;
 afterEach(Function function) => _currentBlock.afterEach = function;
 afterAll(Function function) => _currentBlock.afterAll = function;
 
-class Block {
+abstract class Block {
   final String blockDescription;
   final Function blockFunction;
   Block parent;
@@ -14,17 +16,17 @@ class Block {
 
   startProcessingBlock(){}
   finishProcessingBlock(){}
-  List<Block> get containedBlocks() => [];
+  List<Block> get containedBlocks => [];
   startProcessingContainedBlock(){}
   finishProcessingContainedBlock(){}
-  abstract addBlock(Block block);
+  addBlock(Block block);
 
-  abstract set beforeEach(Function function);
-  abstract set beforeAll(Function function);
-  abstract set afterEach(Function function);
-  abstract set afterAll(Function function);
+  set beforeEach(Function function);
+  set beforeAll(Function function);
+  set afterEach(Function function);
+  set afterAll(Function function);
   
-  bool get countableAsSpec() => false;
+  bool get countableAsSpec => false;
 }
 
 class DescribeBlock extends Block {
@@ -48,7 +50,7 @@ class DescribeBlock extends Block {
   finishProcessingBlock() {
     if (_afterAll !== null) _afterAll();
   }
-  List<Block> get containedBlocks() {
+  List<Block> get containedBlocks {
     return blocks;
   }
   startProcessingContainedBlock() {
@@ -90,7 +92,7 @@ class ItBlock extends Block {
     throw new Exception('Cannot set a afterAll function for an it-block');
   }
   
-  bool get countableAsSpec() => true;
+  bool get countableAsSpec => true;
 }
 
 Block _rootBlock;
@@ -104,4 +106,4 @@ _addBlock(Block block) {
   _currentBlock.addBlock(block);
 }
 
-_switchTo(Block block) => _currentBlock = block;
+Block _switchTo(Block block) => _currentBlock = block;

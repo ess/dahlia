@@ -1,3 +1,5 @@
+part of Dahlia;
+
 class DefaultBlockSwitcher implements BlockSwitcher {
   static DefaultBlockSwitcher _instance;
   
@@ -10,7 +12,7 @@ class DefaultBlockSwitcher implements BlockSwitcher {
   
   DefaultBlockSwitcher._internal() {}
   
-  void switchTo(Block block) => _switchTo(block);
+  Block switchTo(Block block) => _switchTo(block);
   
-  Block get rootBlock() => _rootBlock;
+  Block get rootBlock => _rootBlock;
 }

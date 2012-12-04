@@ -1,3 +1,5 @@
+part of Dahlia;
+
 EqualMatcher equal(var expected) => new EqualMatcher(expected);
 NotMatcher not(Matcher matcher) => new NotMatcher(matcher);
 BeTrueMatcher beTrue() => new BeTrueMatcher();
@@ -49,7 +51,7 @@ class ThrowMatcher implements Matcher {
     }
     try {
       actual();
-    } catch(var exception) {
+    } catch(exception) {
       if (exceptionChecker != null && !exceptionChecker(exception)) {
         throw exception;
       }

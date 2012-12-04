@@ -1,3 +1,5 @@
+part of Dahlia;
+
 class ConsoleReporter implements Reporter {
   int _currentBlockLevel;
   
@@ -47,7 +49,7 @@ class ConsoleReporter implements Reporter {
   void printStacktrace(var exception, var stack) {
     print('${blockLevelIndent(_currentBlockLevel)}  $exception');
     print('');
-    stack.toString().split(new RegExp(@"^", true)).forEach((stackLine) {
+    stack.toString().split(new RegExp(r"^", multiLine: true)).forEach((stackLine) {
       String trimmedStackLine = stackLine.trim();
       if(trimmedStackLine.length > 0) {
         print('${blockLevelIndent(_currentBlockLevel)}    ${stackLine.trim()}');

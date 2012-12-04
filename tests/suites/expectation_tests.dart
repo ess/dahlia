@@ -1,3 +1,5 @@
+part of DahliaTestSuites;
+
 class ExpectationTestMatcher implements Matcher {
   bool match;
   

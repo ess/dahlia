@@ -1,12 +1,12 @@
-#library('Dahlia BDD-style testing framework for Dart');
+library Dahlia;
 
-#source('matcher/matcher_base.dart');
-#source('matcher/general.dart');
-#source('matcher/string.dart');
+part 'matcher/matcher_base.dart';
+part 'matcher/general.dart';
+part 'matcher/string.dart';
 
-#source('structure/expectation.dart');
-#source('structure/block.dart');
+part 'structure/expectation.dart';
+part 'structure/block.dart';
 
-#source('runner/runner.dart');
-#source('runner/console_reporter.dart');
-#source('runner/default_block_switcher.dart');
+part 'runner/runner.dart';
+part 'runner/console_reporter.dart';
+part 'runner/default_block_switcher.dart';
