@@ -1,9 +1,21 @@
 # dahlia - BDD unit testing for Dart
 dahlia is a behavior-driven-development unit testing framework for the programming language Dart. It is highly inspired by Jasmine and RSpec.
 
+## Install ##
+
+To use dahlia, add it as a dependency in the pubspec.yml for your application:
+
+    dependencies:
+      dahlia:
+        git: git://github.com/it-agile/dahlia.git
+
+Then install the package:
+
+    pub install
+
 ## Example
 ```dart
-#import('../src/dahlia.dart');
+import 'package:dahlia/dahlia.dart';
 
 main() {
   describe('two equal strings', () {
