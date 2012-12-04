@@ -1,12 +1,12 @@
 library Dahlia;
 
-part 'matcher/matcher_base.dart';
-part 'matcher/general.dart';
-part 'matcher/string.dart';
+part 'src/matcher/matcher_base.dart';
+part 'src/matcher/general.dart';
+part 'src/matcher/string.dart';
 
-part 'structure/expectation.dart';
-part 'structure/block.dart';
+part 'src/structure/expectation.dart';
+part 'src/structure/block.dart';
 
-part 'runner/runner.dart';
-part 'runner/console_reporter.dart';
-part 'runner/default_block_switcher.dart';
+part 'src/runner/runner.dart';
+part 'src/runner/console_reporter.dart';
+part 'src/runner/default_block_switcher.dart';
