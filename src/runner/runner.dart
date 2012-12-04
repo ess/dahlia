@@ -1,3 +1,5 @@
+part of Dahlia;
+
 class Runner {
   int _numberOfSpecs;
   int _numberOfFailures;
@@ -33,7 +35,7 @@ class Runner {
       block.startProcessingBlock();
       processContainedBlocks(block);
       block.finishProcessingBlock();
-    } catch(var thrown, var stack) {
+    } catch(thrown, stack) {
       addToNumberOfCrashes(block);
       _reporters.forEach((Reporter reporter) => reporter.crashOccurred(block, thrown, stack));
     }
@@ -45,7 +47,7 @@ class Runner {
     _reporters.forEach((Reporter reporter) => reporter.blockExecutionStarted(block));
     try {
       block.blockFunction();
-    } catch(var thrown, var stack) {
+    } catch(thrown, stack) {
       if (block.countableAsSpec) {
         addToNumberOfFailures(block);
         _reporters.forEach((Reporter reporter) => reporter.failureOccurred(block, thrown, stack));
@@ -82,12 +84,12 @@ class Runner {
     _numberOfCrashes++;
   }
   
-  int get numberOfSpecs() => _numberOfSpecs;
-  int get numberOfFailures() => _numberOfFailures;
-  int get numberOfCrashes() => _numberOfCrashes;  
+  int get numberOfSpecs => _numberOfSpecs;
+  int get numberOfFailures => _numberOfFailures;
+  int get numberOfCrashes => _numberOfCrashes;  
 }
 
-interface Reporter {
+abstract class Reporter {
   void blockProcessingStarted(Block block);
   void blockProcessingFinshed(Block block);
   void blockExecutionStarted(Block block);
@@ -98,7 +100,7 @@ interface Reporter {
   void testRunFinished(int numberOfSpecs, int numberOfFailures, int numberOfCrashes);
 }
 
-interface BlockSwitcher {
-  void switchTo(Block block);
-  Block get rootBlock();
+abstract class BlockSwitcher {
+  Block switchTo(Block block);
+  Block get rootBlock;
 }

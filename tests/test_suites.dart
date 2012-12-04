@@ -1,11 +1,12 @@
-#library('dahlia test suites');
-#import('../src/dahlia.dart');
+library DahliaTestSuites;
 
-#source('suites/general_matcher_tests.dart');
-#source('suites/string_matchers_tests.dart');
-#source('suites/block_tests.dart');
-#source('suites/expectation_tests.dart');
-#source('suites/runner_tests.dart');
+import '../src/dahlia.dart';
+
+part 'suites/general_matcher_tests.dart';
+part 'suites/string_matchers_tests.dart';
+part 'suites/block_tests.dart';
+part 'suites/expectation_tests.dart';
+part 'suites/runner_tests.dart';
 
 testSuites() {
   generalMatcherTests();
