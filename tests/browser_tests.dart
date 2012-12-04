@@ -1,5 +1,5 @@
 import 'dart:html';
-import '../src/dahlia.dart';
+import '../lib/dahlia.dart';
 
 import 'test_suites.dart';
 
