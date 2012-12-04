@@ -1,6 +1,6 @@
 // runs all tests on the console
 
-import '../src/dahlia.dart';
+import '../lib/dahlia.dart';
 import 'test_suites.dart';
 
 main() {

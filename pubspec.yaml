@@ -1,0 +1,7 @@
+name: dahlia
+version: 0.0.0
+description: >
+  dahlia is a behavior-driven-development (BDD) unit testing framwork for the
+  programming language Dart. It is highly inspired by Jasmine an RSpec.
+author: Robert Beeger
+homepage: https://github.com/it-agile/dahlia
